@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoveGreen | Simulador</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="../index.html" class="logo">
+        <img src="../img/logomovegreen.png" alt="Logo MoveGreen">
+      </a>
+
+      <ul class="menu">
+        <li><a class="nav-link" href="../index.html">Início</a></li>
+        <li><a class="nav-link" href="integrantes.html">Integrantes</a></li>
+        <li><a class="nav-link" href="sobre.html">Sobre</a></li>
+        <li><a class="nav-link" href="beneficios.html">Benefícios</a></li>
+        <li><a class="nav-link active" href="simulador.html">Simulador</a></li>
+        <li><a class="nav-link" href="voucher.html">Voucher</a></li>
+        <li><a class="nav-link" href="faq.html">FAQ</a></li>
+        <li><a class="nav-link" href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+   <main class="page">
+    <section class="page-title">
+      <p class="tag">Protótipo funcional</p>
+      <h1>Simulador de conversão de pontos</h1>
+      <p>
+        Teste como os pontos acumulados na SoulUp podem ser convertidos em
+        créditos para transporte público dentro da proposta MoveGreen.
+      </p>
+    </section>
+
+    <section class="simulator-layout">
+      <article class="simulator-panel">
+        <h2>Calcule seu benefício</h2>
+        <p>
+          Neste protótipo, cada 100 pontos equivalem a R$ 1,00 em crédito de
+          transporte público.
+        </p>
+
+        <form class="simulator-form">
+          <label for="points">Pontos disponíveis</label>
+          <input id="points" type="number" value="8420" min="100" step="100">
+
+          <label for="transport">Modal de transporte</label>
+          <select id="transport">
+            <option value="5.20">Ônibus - R$ 5,20</option>
+            <option value="5.00">Metrô - R$ 5,00</option>
+            <option value="4.80">Trem - R$ 4,80</option>
+          </select>
+
+          <button type="button" id="calculateBtn">Simular conversão</button>
+        </form>
+      </article>
+
+      <article class="simulator-result">
+        <p class="tag">Resultado estimado</p>
+
+        <div class="result-card">
+          <span>Crédito disponível</span>
+          <strong id="creditResult">R$ 84,20</strong>
+        </div>
+
+        <div class="result-card">
+          <span>Passagens aproximadas</span>
+          <strong id="ticketsResult">16</strong>
+        </div>
+
+        <div class="result-card">
+          <span>Impacto ambiental estimado</span>
+          <strong id="impactResult">5,6 kg de CO₂ evitados</strong>
+        </div>
+
+        <a class="btn primary" href="voucher.html">Gerar voucher</a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>MoveGreen - Projeto acadêmico FIAP Challenge NEXT 2026</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
