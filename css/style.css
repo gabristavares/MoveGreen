@@ -208,3 +208,170 @@ button {
   background: var(--green);
 }
 
+/* CELULAR ILUSTRADO */
+.phone-area {
+  min-height: 500px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #fff7e8;
+  box-shadow: none;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.phone-area::before {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: #dff3e5;
+  z-index: 0;
+  transition: transform 0.35s ease;
+}
+
+.phone-area::after {
+  content: "";
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  background:
+    radial-gradient(circle, #f4b942 0 5px, transparent 6px),
+    radial-gradient(circle, #2f8bd8 0 5px, transparent 6px),
+    radial-gradient(circle, #e76f51 0 5px, transparent 6px),
+    radial-gradient(circle, #1f8a5b 0 5px, transparent 6px);
+  background-position: 20px 80px, 330px 90px, 330px 270px, 40px 300px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 1;
+  transition: transform 0.35s ease;
+}
+
+.phone {
+  position: relative;
+  z-index: 2;
+  width: 250px;
+  min-height: 360px;
+  padding: 16px;
+  border: 8px solid #13211f;
+  border-radius: 24px;
+  background: var(--white);
+  box-shadow: 0 24px 50px rgba(18, 33, 31, 0.18);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.phone::before,
+.phone::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  width: 80px;
+  height: 130px;
+  border-radius: 80% 0 80% 0;
+  z-index: -1;
+}
+
+.phone::before {
+  left: -70px;
+  background: var(--green);
+  transform: rotate(-35deg);
+}
+
+.phone::after {
+  right: -70px;
+  background: var(--orange);
+  transform: rotate(35deg);
+}
+
+.phone-area:hover .phone {
+  transform: translateY(-12px) scale(1.03) rotate(-1deg);
+  box-shadow: 0 32px 65px rgba(18, 33, 31, 0.24);
+}
+
+.phone-area:hover::before {
+  transform: scale(1.06);
+}
+
+.phone-area:hover::after {
+  transform: rotate(4deg) scale(1.04);
+}
+
+.phone.phone-active {
+  transform: scale(1.04);
+}
+
+.phone-detail {
+  width: 80px;
+  height: 8px;
+  margin: 0 auto 28px;
+  border-radius: 999px;
+  background: #ccd9d5;
+}
+
+.balance-card {
+  padding: 20px;
+  border-radius: 8px;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--green), var(--teal));
+  transition: transform 0.35s ease;
+}
+
+.phone-area:hover .balance-card {
+  transform: scale(1.03);
+}
+
+.balance-card span {
+  display: inline-block;
+  margin-bottom: 26px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.balance-card strong {
+  display: block;
+  font-size: 2.2rem;
+}
+
+.balance-card p {
+  color: var(--white);
+}
+
+.voucher-card {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px dashed var(--teal);
+  border-radius: 8px;
+}
+
+.voucher-card div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.voucher-card span,
+.voucher-card p {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.route {
+  margin: 34px 8px 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 4px solid var(--yellow);
+}
+
+.route span {
+  width: 18px;
+  height: 18px;
+  margin-top: -11px;
+  border: 4px solid var(--yellow);
+  border-radius: 50%;
+  background: var(--white);
+}
