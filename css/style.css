@@ -375,3 +375,174 @@ button {
   border-radius: 50%;
   background: var(--white);
 }
+
+/* ESTRUTURA DAS PAGINAS */
+.intro,
+.page-title,
+.content-grid,
+.cards,
+.steps-section,
+.team-grid,
+.contact-page {
+  max-width: 1180px;
+  margin: auto;
+  padding: 56px 24px;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: 70px;
+  border-top: 1px solid var(--border);
+  align-items: start;
+}
+
+.intro h2 {
+  max-width: 470px;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.12;
+  color: #102421;
+}
+
+.intro > p {
+  max-width: 620px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #344844;
+}
+
+.page {
+  min-height: calc(100vh - 145px);
+}
+
+.page-title {
+  padding-bottom: 25px;
+}
+
+.page-title.small {
+  padding: 0 0 24px;
+}
+
+.page-title h1 {
+  font-size: clamp(2.6rem, 5vw, 4rem);
+}
+
+/* CARDS GERAIS */
+.content-grid,
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.text-card,
+.card,
+.step,
+.member,
+.contact-form,
+.faq-card {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 14px 30px rgba(18, 33, 31, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.text-card::before,
+.card::before,
+.step::before,
+.member::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: linear-gradient(135deg, rgba(31, 138, 91, 0.10), rgba(244, 185, 66, 0.10));
+  transition: opacity 0.3s ease;
+}
+
+.text-card:hover,
+.card:hover,
+.step:hover,
+.member:hover,
+.contact-form:hover,
+.faq-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--green);
+  box-shadow: 0 22px 45px rgba(18, 33, 31, 0.16);
+}
+
+.text-card:hover::before,
+.card:hover::before,
+.step:hover::before,
+.member:hover::before {
+  opacity: 1;
+}
+
+.text-card h2,
+.text-card p,
+.card span,
+.card h2,
+.card p,
+.step strong,
+.step p,
+.member h2,
+.member p,
+.member a,
+.member .avatar,
+.member .avatar-img,
+.faq-card h2,
+.faq-card p {
+  position: relative;
+  z-index: 1;
+}
+
+/* SOBRE */
+.about-flow {
+  max-width: 1180px;
+  margin: 0 auto 40px;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.about-flow div {
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.about-flow div:hover {
+  transform: translateY(-6px);
+  border-color: var(--green);
+  box-shadow: 0 16px 32px rgba(18, 33, 31, 0.13);
+}
+
+.about-flow p {
+  color: var(--text);
+}
+
+.badge,
+.about-flow span {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background: #1a6b3c;
+  color: var(--white);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.about-flow div:hover .badge,
+.about-flow div:hover span {
+  transform: scale(1.1) rotate(-3deg);
+  background: var(--teal);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
