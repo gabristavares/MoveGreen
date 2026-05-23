@@ -80,3 +80,72 @@ if (phone) {
     phone.classList.toggle("phone-active");
   });
 }
+
+const calculateBtn = document.querySelector("#calculateBtn");
+
+if (calculateBtn) {
+  calculateBtn.addEventListener("click", () => {
+    const pointsInput = document.querySelector("#points");
+    const transportSelect = document.querySelector("#transport");
+
+    const creditResult = document.querySelector("#creditResult");
+    const ticketsResult = document.querySelector("#ticketsResult");
+    const impactResult = document.querySelector("#impactResult");
+
+    const points = Number(pointsInput.value);
+    const ticketPrice = Number(transportSelect.value);
+    const transportName = transportSelect.options[transportSelect.selectedIndex].text;
+
+     if (!points || points < 100) {
+      alert("Informe uma quantidade válida de pontos.");
+      pointsInput.focus();
+      return;
+    }
+
+    const credit = points / 100;
+    const tickets = Math.floor(credit / ticketPrice);
+    const impact = tickets * 0.35; 
+
+    const formattedCredit = credit.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    });
+
+    creditResult.textContent = formattedCredit;
+    ticketsResult.textContent = tickets;
+    impactResult.textContent = `${impact.toFixed(1).replace(".", ",")} kg de CO₂ evitados`;
+
+    document.querySelectorAll(".result-card").forEach((card) => {
+      card.classList.remove("result-updated");
+
+      setTimeout(() => {
+        card.classList.add("result-updated");
+      }, 10);
+    });
+
+    localStorage.setItem("movegreenCredit", formattedCredit);
+    localStorage.setItem("movegreenTickets", tickets);
+    localStorage.setItem("movegreenImpact", `${impact.toFixed(1).replace(".", ",")} kg de CO₂ evitados`);
+    localStorage.setItem("movegreenTransport", transportName);
+    localStorage.setItem("movegreenPoints", points);
+  });
+}
+
+const validateVoucher = document.querySelector("#validateVoucher");
+
+if (validateVoucher) {
+  validateVoucher.addEventListener("click", () => {
+    const voucherMessage = document.querySelector("#voucherMessage");
+    const voucherTicket = document.querySelector(".voucher-ticket");
+
+     voucherTicket.classList.add("voucher-validado");
+
+    voucherMessage.textContent = "Voucher validado com sucesso. Benefício liberado para embarque.";
+    voucherMessage.style.color = "#1f8a5b";
+
+    validateVoucher.textContent = "Voucher validado";
+    validateVoucher.disabled = true;
+    validateVoucher.style.opacity = "0.85";
+    validateVoucher.style.cursor = "not-allowed";
+  });
+}
