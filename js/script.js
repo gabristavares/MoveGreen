@@ -149,3 +149,28 @@ if (validateVoucher) {
     validateVoucher.style.cursor = "not-allowed";
   });
 }
+
+const voucherValue = document.querySelector("#voucherValue");
+
+if (voucherValue) {
+  const savedCredit = localStorage.getItem("movegreenCredit");
+  const savedTickets = localStorage.getItem("movegreenTickets");
+  const savedImpact = localStorage.getItem("movegreenImpact");
+  const savedTransport = localStorage.getItem("movegreenTransport");
+
+    if (savedCredit) {
+    voucherValue.textContent = savedCredit;
+  }
+
+  if (savedTickets) {
+    document.querySelector("#voucherTickets").textContent = savedTickets;
+  }
+
+  if (savedImpact) {
+    document.querySelector("#voucherImpact").textContent = savedImpact;
+  }
+
+  if (savedTransport) {
+    document.querySelector("#voucherTransport").textContent = savedTransport;
+  }
+}
