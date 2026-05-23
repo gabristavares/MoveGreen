@@ -40,4 +40,63 @@
     Envie dúvidas, sugestões ou propostas de parceria para evoluir a solução de
     conversão de pontos SoulUp em créditos de transporte público.
     </p>
-   </body>
+
+    <div class="contact-info">
+    <p><strong>Projeto:</strong> MoveGreen</p>
+    <p><strong>Desafio:</strong> SoulUp + FIAP Challenge NEXT 2026</p>
+    <p><strong>Foco:</strong> Transporte público sustentável</p>
+   </div>
+    </section>
+
+    <form class="contact-form">
+      <label for="nome">Nome</label>
+      <input>
+        id="nome"
+        type="text"
+        placeholder="Seu nome completo"
+        required
+        oninvalid="this.setCustomValidity('Informe seu nome para continuar.')"
+        oninput="this.setCustomValidity('')"
+
+
+      <label for="email">E-mail</label>
+      <input
+        id="email"
+        type="email"
+        placeholder="seuemail@exemplo.com"
+        required
+        oninvalid="this.setCustomValidity('Informe um e-mail válido para continuar. Exemplo: nome@email.com')"
+        oninput="this.setCustomValidity('')"
+>
+
+
+      <label for="assunto">Assunto</label>
+      <input
+        id="assunto"
+        type="text"
+        placeholder="Assunto da mensagem"
+        required
+        oninvalid="this.setCustomValidity('Informe o assunto da mensagem.')"
+        oninput="this.setCustomValidity('')"
+>
+      <label for="mensagem">Mensagem</label>
+      <textarea
+        id="mensagem"
+        placeholder="Escreva sua mensagem"
+        required
+        oninvalid="this.setCustomValidity('Escreva uma mensagem antes de enviar.')"
+        oninput="this.setCustomValidity('')"
+></textarea>      
+
+      <button type="submit">Enviar mensagem</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p>MoveGreen - Projeto academico FIAP Challenge NEXT 2026</p>
+  </footer>
+  <script src="../js/script.js"></script>
+</body>
+</html>
+
+  
